@@ -1,6 +1,6 @@
 # 🎬 Netflix UI Clone
 
-![Netflix UI Clone](Assets/Images/preview.png) <br>
+![Preview](Assets/Images/Preview.png) <br>
 A visually appealing **Netflix-inspired UI Clone** built using **HTML and CSS**.  
 This project recreates the look and feel of the Netflix homepage with modern layout, movie thumbnails, banners, and responsive styling.
 
