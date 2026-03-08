@@ -1,0 +1,645 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%; /* Ensures the body takes the full height of the viewport */
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+body {
+  background-color: rgb(1, 3, 41);
+}
+
+.main {
+  background-image: url(Assets/Images/Netflix_Background_Image_02.jpg);
+  height: 85vh; /* Adjust the height to fit the design */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex; /* Enables flexbox for alignment */
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Centers text within the container */
+  padding: 20px; /* Adds padding for spacing */
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+  z-index: 1;
+}
+
+/* Remaining styles remain unchanged */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+  max-width: 80%;
+  margin: auto;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding: 20px 0;
+}
+
+nav img {
+  height: 40px;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  height: 42px;
+  width: 220px;
+  justify-content: space-evenly;
+}
+
+.nav-language {
+  background-color: #ff0000; /* Matching the Sign In button's background */
+  color: white; /* Ensures white text */
+  border: none; /* Removes any default borders */
+  padding: 10px 20px; /* Adds consistent padding */
+  font-size: 1rem; /* Matches the font size */
+  cursor: pointer; /* Makes it clickable */
+  border-radius: 5px; /* Rounds the edges for a consistent design */
+  appearance: none; /* Removes default browser styling for the select dropdown */
+  text-align: center; /* Centers the text */
+}
+
+.select-language {
+  background: none; /* Removes the default background for the dropdown */
+  /* background-color: #7c0000; */
+  border: none; /* Removes default border */
+  color: inherit; /* Inherits the text color from nav-language */
+  font: inherit; /* Inherits font styling */
+  cursor: pointer; /* Ensures pointer cursor */
+}
+
+.select-language option {
+  background-color: #7c0000;
+}
+
+nav .sign_in {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+nav .sign_in:hover {
+  /* background-color: #7c000076; */
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
+  transform: scale(0.95);
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.main .content {
+  z-index: 2;
+  color: #fff;
+}
+
+.hero {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  gap: 15px;
+}
+
+.hero > :nth-child(1) {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.hero > :nth-child(2) {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.hero > :nth-child(3) {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.email {
+  color: white;
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: black;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.email-container {
+  display: flex;
+  gap: 10px; /* Adds spacing between the input and button */
+  margin-top: 20px; /* Adds spacing above the email form */
+}
+
+.email input {
+  padding: 7px 14px 8px 14px; /* Adjusted padding for consistency */
+  color: black;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Adjusted RGBA transparency value */
+  font-size: 12px;
+  font-weight: 400;
+  width: 100%; /* Optional: Set width to 100% to make the input stretch across its container */
+}
+
+.email-container input {
+  padding: 10px;
+  flex: 1; /* Makes the input take up available space */
+  border: none;
+  border-radius: 4px;
+}
+
+.email::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.started {
+  width: 100%;
+  max-width: 220px;
+  padding: 12px 20px;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.started img {
+  margin-left: 10px;
+}
+
+.started:hover {
+  background-color: #b20710; /* Darker red on hover */
+}
+
+.started img {
+  margin-left: 10px;
+  filter: brightness(0) invert(1); /* Converts black to white */
+}
+
+.email-container button {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.started:hover {
+  background-color: rgba(23, 22, 22, 0.9);
+  transform: scale(0.9);
+}
+
+@media (max-width: 768px) {
+  .hero > :nth-child(1) {
+    font-size: 2.5rem;
+  }
+
+  .hero > :nth-child(2) {
+    font-size: 1rem;
+  }
+
+  .hero > :nth-child(3) {
+    font-size: 0.9rem;
+  }
+
+  .email,
+  .started {
+    max-width: 100%;
+  }
+
+  .started {
+    max-width: 180px; /* Reduce the size for tablets */
+    font-size: 1rem; /* Slightly smaller font */
+    padding: 10px 15px; /* Adjust padding */
+  }
+
+  .started img {
+    margin-left: 5px; /* Adjust spacing for smaller screens */
+  }
+
+  nav image {
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero > :nth-child(1) {
+    font-size: 2rem;
+  }
+
+  .hero > :nth-child(2) {
+    font-size: 0.9rem;
+  }
+
+  .hero > :nth-child(3) {
+    font-size: 0.8rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .started {
+    max-width: 150px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    justify-content: center;
+  }
+
+  .started img {
+    display: none;
+  }
+
+  nav img {
+    height: 7px;
+  }
+}
+
+.user {
+  width: 700px;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sign_in {
+  background-color: red;
+  color: white;
+}
+
+.separation {
+  background-color: rgb(255, 1, 1);
+  height: 5px;
+}
+
+.heading {
+  color: white;
+  font-weight: 900;
+  font-size: 1.75rem;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  position: relative;
+  margin: auto;
+}
+
+.heading_02 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: white;
+}
+
+.content select {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 40px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 252, 252, 0.419);
+  position: relative;
+}
+
+.c_text {
+  padding-left: 100px;
+}
+
+.region {
+  width: 100px;
+  padding-left: 10px;
+}
+
+.type {
+  width: 150px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.movie_list {
+  display: flex;
+  justify-content: space-around;
+  margin-left: -30px;
+}
+
+.box {
+  background-color: whitesmoke;
+  background-size: cover;
+  background-position: center;
+  height: 252px;
+  width: 180px;
+  border-radius: 5px;
+  position: relative;
+  margin-top: 50px;
+  z-index: 2;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.05); /* Zoom-in effect on hover */
+  box-shadow: 0 8px 8px 8px rgba(255, 255, 255, 0.14); /* Adds shadow */
+}
+
+.number {
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 3;
+}
+
+.movie_01 {
+  background-image: url(Assets/Images/The\ Royals.webp);
+}
+
+.movie_02 {
+  background-image: url(Assets/Images/Chhaava.webp);
+}
+
+.movie_03 {
+  background-image: url(Assets/Images/Bad\ Boy\ Ugly.webp);
+}
+
+.movie_04 {
+  background-image: url(Assets/Images/The\ Diplomat.webp);
+}
+
+.movie_05 {
+  background-image: url(Assets/Images/Jewel\ Thief.webp);
+}
+
+.movie_06 {
+  background-image: url(Assets/Images/Pernille.webp);
+}
+
+.content_02 {
+  margin-top: 10px;
+  padding-left: 100px;
+}
+
+.reasons {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.box_02 {
+  height: 290px;
+  width: 280px;
+  background-color: rgb(18, 24, 111); /* Deep blue */
+  color: #fff;
+  border-radius: 10px;
+  position: relative; /* Ensure child elements can use absolute positioning */
+  padding: 15px;
+  box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.264); /* Optional for subtle shadow */
+}
+
+.text_pad {
+  padding-top: 10px;
+}
+
+.box_02_text {
+  font-size: 1.2rem;
+  line-height: 1.5; /* */
+}
+
+.img_tv {
+  background-image: url("Assets/Images/TV_Image_05.png");
+  background-size: contain; /* */
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.box_02:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 8px 8px rgba(255, 255, 255, 0.14);
+}
+
+.gif-container {
+  height: 72px;
+  width: 72px;
+  border: none;
+  /* padding: 10px; */
+  border-radius: 10px;
+  position: absolute;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.gif {
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  bottom: -12px;
+  left: 175px;
+  border-radius: 5px;
+  height: 72px;
+  width: 72px;
+  /* display: block; */
+}
+
+.kids_img {
+  background-image: url(Assets/Images/Kids_Image_06.png);
+  height: 80px;
+  width: 80px;
+  background-size: contain; /* */
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  bottom: -35px;
+  left: 155px;
+  border-radius: 5px;
+}
+
+.box_02_text_kids {
+  font-size: 1.25rem;
+}
+
+.content_03 .heading {
+  padding-left: 50px;
+}
+
+/* General FAQ Section Styling */
+.content_03 {
+  margin-top: 10px;
+  padding-left: 50px;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+.all_questions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  min-width: 600px;
+  margin-left: 50px;
+}
+
+/* Individual Box Styling */
+.box_settings {
+  width: 85vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #4a4a4a;
+  background-color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.box_settings:hover {
+  background-color: #444;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Question Text Styling */
+.questions {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Plus Icon Styling */
+.addition {
+  background-image: url("Assets/Images/addition_icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.content_03{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 10%;
+  font-size: 14px;
+  height: 30vh;
+  margin-top: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #e50914;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+.footer-bottom select {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
